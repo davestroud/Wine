@@ -1,30 +1,20 @@
-library(readr)
-library(dplyr)
-library(ggplot2)
-library(tidyverse)
-library(data.table)
-library(DT)
-library(kableExtra)
-library(knitr)
 
-wines <- read_csv("winemag-data_first150k.csv")
-dim(wines)
+###########################
+# R Source code file used to create the Wine Project
+# December 31, 2017
+# Created by David Stroud
+###########################
 
-temp<-wines %>%
-  filter(points >95) %>%
-  group_by(country)%>%
-  summarise(n = n()) %>%
-  arrange(desc(n)) %>%
-  head(n = 10)
+gpa.section.a <- c(3.13, 3.55, 2.92, 2.73, 3.0, 3.18, 2.66, 3.76)
+sd(gpa.section.a)
+args(sd)
+gpa.section.b <- c(3.14, 3.13, 3.25, 2.93, 2.73, 3.50, 2.70, 3.23)
 
-kable(temp)
+all.gpa <- c(gpa.section.a, gpa.section.b)
 
+help(rnorm)
 
-temp %>%    
-  ggplot(aes(x =reorder(country,n), y =  n )) +
-  geom_bar(stat='identity',colour="white", fill = c("darkorchid4")) +
-  labs(x = 'country', y = 'Count', title = 'Best Wine Producing Country - Point wise') +
-  coord_flip() + 
-  theme_bw()
+pnorm(75,85,5)
 
-
+names(stackloss)
+rlm(stack.loss ~ Air.Flow, data=stackloss)
